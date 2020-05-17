@@ -17,6 +17,13 @@ docker-compose up -d
 | REST framewrk         | http://localhost:8000/api/    |
 | Swagger               | http://localhost:8000/swagger/|
 
+### Reset Password 
+
+```
+docker exec -i -t django-docker-compose bash
+python manage.py createsuperuser
+```
+
 # command
 
 |アクション	            | コマンド                      |
