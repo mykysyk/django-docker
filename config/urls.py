@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from sample_app.urls import router as sample_app_router
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='API Lists')
 
 urlpatterns = [
     path('', include('sample_app.urls')),
     path('admin/', admin.site.urls),
     path('api/', include(sample_app_router.urls)),
+    path('swagger/', schema_view),
 ]
